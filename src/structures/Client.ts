@@ -5,17 +5,19 @@ import {
   ClientEvents,
   Collection,
 } from "discord.js";
-import { CommandType } from "../typings/Command";
 import glob from "glob";
 import { promisify } from "util";
 import fs from "fs";
+import { CommandType } from "../typings/Command";
 import { RegisterCommandsOptions } from "../typings/client";
+import { ClientConfig } from "../typings/Config";
 import { Event } from "./Event";
 
 const globPromise = promisify(glob);
 
 export class Bot extends Client {
   commands: Collection<string, CommandType> = new Collection();
+  config: ClientConfig = require("../../config.json");
 
   constructor(options: Omit<ClientOptions, "intents"> = {}) {
     super({
@@ -65,7 +67,7 @@ export class Bot extends Client {
     this.on("ready", () => {
       this.registerCommands({
         commands: slashCommands,
-        guildId: process.env.guildId,
+        guildId: this.config.guildId,
       });
     });
 
