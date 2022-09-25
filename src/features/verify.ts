@@ -9,7 +9,7 @@ import {
   ButtonStyle,
 } from "discord.js";
 
-export default new Feature("verify", (client) => {
+export default new Feature((client) => {
   // message sending and editing
   client.on("ready", async () => {
     const options: MessageCreateOptions = {

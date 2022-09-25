@@ -25,7 +25,7 @@ export class Bot extends Client {
 
   constructor(options: BotOptions = {}) {
     super({
-      intents: ["Guilds", "GuildMessages", "MessageContent"],
+      intents: ["Guilds", "GuildMessages", "GuildMembers", "MessageContent"],
       ...options,
     });
   }
