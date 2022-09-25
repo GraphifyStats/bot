@@ -52,9 +52,9 @@ export class Bot extends Client {
   async registerModules() {
     // Commands
     const slashCommands: ApplicationCommandDataResolvable[] = [];
-    fs.readdirSync("./src/commands").forEach(async (dir) => {
+    fs.readdirSync(path.join(__dirname, "../commands")).forEach(async (dir) => {
       const commandFiles = fs
-        .readdirSync(`./src/commands/${dir}`)
+        .readdirSync(path.join(__dirname, `../commands/${dir}`))
         .filter((file) => file.endsWith(".ts") || file.endsWith(".js"));
 
       for (const file of commandFiles) {
@@ -77,7 +77,7 @@ export class Bot extends Client {
 
     // Events
     const eventFiles = fs
-      .readdirSync("./src/events")
+      .readdirSync(path.join(__dirname, "../events"))
       .filter((file) => file.endsWith(".ts") || file.endsWith(".js"));
 
     for (const file of eventFiles) {
