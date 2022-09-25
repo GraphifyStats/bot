@@ -55,7 +55,7 @@ export class Bot extends Client {
     fs.readdirSync("./src/commands").forEach(async (dir) => {
       const commandFiles = fs
         .readdirSync(`./src/commands/${dir}`)
-        .filter((file) => file.endsWith(".ts"));
+        .filter((file) => file.endsWith(".ts") || file.endsWith(".js"));
 
       for (const file of commandFiles) {
         const command: CommandType = await this.importFile(
@@ -78,7 +78,7 @@ export class Bot extends Client {
     // Events
     const eventFiles = fs
       .readdirSync("./src/events")
-      .filter((file) => file.endsWith(".ts"));
+      .filter((file) => file.endsWith(".ts") || file.endsWith(".js"));
 
     for (const file of eventFiles) {
       const event: Event<keyof ClientEvents> = await this.importFile(
