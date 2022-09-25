@@ -5,8 +5,6 @@ import {
   ClientEvents,
   Collection,
 } from "discord.js";
-import glob from "glob";
-import { promisify } from "util";
 import fs from "fs";
 import path from "path";
 import { CommandType } from "../typings/Command";
@@ -14,8 +12,6 @@ import { RegisterCommandsOptions } from "../typings/client";
 import { ClientConfig } from "../typings/Config";
 import { Event } from "./Event";
 import { Feature } from "./Feature";
-
-const globPromise = promisify(glob);
 
 type BotOptions = Omit<ClientOptions, "intents">;
 
