@@ -1,5 +1,11 @@
 {
   "color": "#0094FF",
-  "guildId": "996282375308845107",
-  "environment": "dev"
+  "guildId": "941671046724091968",
+  "environment": "dev",
+  "channels": {
+    "verify": "1023411191990730812"
+  },
+  "roles": {
+    "member": "1003243829291405332"
+  }
 }

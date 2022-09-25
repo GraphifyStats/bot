@@ -8,18 +8,22 @@ import {
 import glob from "glob";
 import { promisify } from "util";
 import fs from "fs";
+import path from "path";
 import { CommandType } from "../typings/Command";
 import { RegisterCommandsOptions } from "../typings/client";
 import { ClientConfig } from "../typings/Config";
 import { Event } from "./Event";
+import { Feature } from "./Feature";
 
 const globPromise = promisify(glob);
+
+type BotOptions = Omit<ClientOptions, "intents">;
 
 export class Bot extends Client {
   commands: Collection<string, CommandType> = new Collection();
   config: ClientConfig = require("../../config.json");
 
-  constructor(options: Omit<ClientOptions, "intents"> = {}) {
+  constructor(options: BotOptions = {}) {
     super({
       intents: ["Guilds", "GuildMessages", "MessageContent"],
       ...options,
@@ -71,7 +75,7 @@ export class Bot extends Client {
       });
     });
 
-    // Event
+    // Events
     const eventFiles = fs
       .readdirSync("./src/events")
       .filter((file) => file.endsWith(".ts"));
@@ -82,5 +86,23 @@ export class Bot extends Client {
       );
       this.on(event.event, event.run.bind(null, this));
     }
+
+    // Features
+    const readFeatures = async (dir) => {
+      const files = fs.readdirSync(path.join(__dirname, dir));
+      for (const file of files) {
+        const stat = fs.lstatSync(path.join(__dirname, dir, file));
+        if (stat.isDirectory()) {
+          readFeatures(path.join(dir, file));
+        } else {
+          const feature: Feature = await this.importFile(
+            path.join(__dirname, dir, file)
+          );
+          feature.run(this);
+        }
+      }
+    };
+
+    readFeatures("../features/");
   }
 }

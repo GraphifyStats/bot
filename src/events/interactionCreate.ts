@@ -1,6 +1,6 @@
 import { InteractionType } from "discord.js";
 import { Event } from "../structures/Event";
-import { ExtendedInteraction } from "../typings/Command";
+import { CmdInteraction } from "../typings/Command";
 
 export default new Event("interactionCreate", async (client, interaction) => {
   if (interaction.isCommand()) {
@@ -8,7 +8,7 @@ export default new Event("interactionCreate", async (client, interaction) => {
 
     command.run({
       client,
-      interaction: interaction as ExtendedInteraction,
+      interaction: interaction as CmdInteraction,
     });
   }
 });

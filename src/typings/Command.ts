@@ -1,28 +1,17 @@
 import {
   ChatInputApplicationCommandData,
   CommandInteraction,
-  CommandInteractionOptionResolver,
   GuildMember,
-  PermissionResolvable,
 } from "discord.js";
 import { Bot } from "../structures/Client";
 
-/**
- * {
- *  name: "commandname",
- * description: "any description",
- * run: async({ interaction }) => {
- *
- * }
- * }
- */
-export interface ExtendedInteraction extends CommandInteraction {
+export interface CmdInteraction extends CommandInteraction {
   member: GuildMember;
 }
 
 interface RunOptions {
   client: Bot;
-  interaction: ExtendedInteraction;
+  interaction: CmdInteraction;
 }
 
 type RunFunction = (options: RunOptions) => any;
