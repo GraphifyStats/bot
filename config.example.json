@@ -1,0 +1,13 @@
+{
+  "color": "#0094FF",
+  "guildId": "YOUR SERVER ID",
+  "environment": "dev",
+  "channels": {
+    "verify": "VERIFY CHANNEL ID",
+    "doorway": "WELCOME AND LEAVE CHANNEL ID",
+    "roles": "ROLES CHANNEL ID"
+  },
+  "roles": {
+    "member": "MEMBER ROLE ID"
+  }
+}
