@@ -1,7 +1,7 @@
 {
   "name": "graphbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "It's Nightbot, but made for Graphify.",
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
@@ -11,8 +11,8 @@
     "watch": "tsc -w"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Not TCA <me@nottca.tk>",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^14.4.0",
     "dotenv": "^16.0.2"
