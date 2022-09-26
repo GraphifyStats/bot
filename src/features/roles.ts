@@ -104,10 +104,11 @@ export default new Feature((client) => {
 
     const role = int.guild.roles.cache.get(id);
     if (memberRoles.cache.has(role.id)) {
+      memberRoles.remove(role);
       int.reply({
         embeds: [
           new EmbedBuilder()
-            .setTitle(`❌ You already have the ${role.name} role.`)
+            .setTitle(`✅ You no longer have the ${role.name} role.`)
             .setColor("Red"),
         ],
         ephemeral: true,
