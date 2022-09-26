@@ -1,5 +1,4 @@
 import { Feature } from "../structures/Feature";
-import fs from "fs";
 import Enmap from "enmap";
 
 const counts = new Enmap("counts", {
