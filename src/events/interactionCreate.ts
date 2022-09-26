@@ -1,4 +1,3 @@
-import { InteractionType } from "discord.js";
 import { Event } from "../structures/Event";
 import { CmdInteraction } from "../typings/Command";
 
