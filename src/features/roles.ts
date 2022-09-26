@@ -109,7 +109,7 @@ export default new Feature((client) => {
         embeds: [
           new EmbedBuilder()
             .setTitle(`✅ You no longer have the ${role.name} role.`)
-            .setColor("Red"),
+            .setColor("DarkGreen"),
         ],
         ephemeral: true,
       });
