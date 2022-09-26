@@ -82,10 +82,11 @@ export default new Feature((client) => {
         }
       } else {
         for (const message of messages) {
-          message[1].delete();
-        }
-        for (const option of options) {
-          channel.send(option);
+          if (message[1].embeds[0].title.startsWith("🔔")) {
+            message[1].edit(options[0]);
+          } else if (message[1].embeds[0].title.startsWith("🤔")) {
+            message[1].edit(options[1]);
+          }
         }
       }
     });
