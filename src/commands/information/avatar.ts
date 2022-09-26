@@ -21,7 +21,7 @@ export default new Command({
     const member =
       (interaction.options.getMember("member") as GuildMember) ||
       interaction.member;
-    const avatar = member.user.displayAvatarURL();
+    const avatar = member.user.displayAvatarURL({ size: 4096 });
 
     interaction.reply({
       embeds: [
