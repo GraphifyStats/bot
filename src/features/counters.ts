@@ -2,7 +2,7 @@ import { Feature } from "../structures/Feature";
 import Enmap from "enmap";
 
 const counts = new Enmap("counts", {
-  dataDir: "./counts",
+  dataDir: "./databases/counts",
 });
 
 export default new Feature((client) => {
