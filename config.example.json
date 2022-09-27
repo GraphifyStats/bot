@@ -5,6 +5,7 @@
   "channels": {
     "verify": "VERIFY CHANNEL ID",
     "doorway": "WELCOME AND LEAVE CHANNEL ID",
+    "rules": "RULES CHANNEL ID (to be linked in the welcome message)",
     "roles": "ROLES CHANNEL ID"
   },
   "roles": {

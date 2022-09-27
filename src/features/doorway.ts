@@ -37,7 +37,9 @@ export default new Feature((client) => {
               member.guild.name
             }**!\nYou are the **${ordinalSuffix(
               member.guild.memberCount
-            )}** member!\nPlease make sure to read the <#1002148329976762378>.`
+            )}** member!\nPlease make sure to read the <#${
+              client.config.channels.rules
+            }>.`
           )
           .setThumbnail(member.user.displayAvatarURL())
           .setColor(client.config.color),
