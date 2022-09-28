@@ -7,7 +7,7 @@ const counts = new Enmap("counts", {
 
 export default new Feature((client) => {
   client.on("messageCreate", (message) => {
-    if (message.content.startsWith("e")) {
+    if (message.content.startsWith("e") && message.content.endsWith("e")) {
       counts.ensure("e", 0);
       message.reply({
         content: `EEEE! E has been said ${counts.get("e") + 1} times.`,
