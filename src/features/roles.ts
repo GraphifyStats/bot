@@ -68,7 +68,7 @@ export default new Feature((client) => {
               .setEmoji("1024667806366699550")
               .setLabel("Graphify"),
             new ButtonBuilder()
-              .setCustomId("gnzguy")
+              .setCustomId("gnz")
               .setStyle(ButtonStyle.Secondary)
               .setEmoji("1024667809780875324")
               .setLabel("GNZGUY")
