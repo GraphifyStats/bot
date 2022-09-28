@@ -17,6 +17,7 @@ export default new Feature((client) => {
     announcement: "1003658192762441738",
     jipstats: "1000689439087013989",
     graphify: "1023427951703900230",
+    gnz: "1024664925462867988",
   };
 
   // message sending and editing
@@ -59,13 +60,18 @@ export default new Feature((client) => {
             new ButtonBuilder()
               .setCustomId("jipstats")
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("🔴")
+              .setEmoji("1024667803678146650")
               .setLabel("JipStats"),
             new ButtonBuilder()
               .setCustomId("graphify")
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("🔵")
-              .setLabel("Graphify")
+              .setEmoji("1024667806366699550")
+              .setLabel("Graphify"),
+            new ButtonBuilder()
+              .setCustomId("gnzguy")
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("1024667809780875324")
+              .setLabel("GNZGUY")
           ),
         ],
       },
