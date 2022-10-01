@@ -49,7 +49,7 @@ export default new Feature((client) => {
 
   // button pressing
   client.on("interactionCreate", (int) => {
-    const settings: DashboardConfig = require("../site/settings.json");
+    const settings: DashboardConfig = require("../../site/settings.json");
 
     if (!int.isButton()) return;
     if (int.customId !== "verify") return;
