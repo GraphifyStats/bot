@@ -1,0 +1,7 @@
+{
+  "clientId": "INSERT CLIENT ID HERE",
+  "port": 5804,
+  "domain": "http://127.0.0.1:5804",
+  "callback": "http://127.0.0.1:5804/callback",
+  "banned": []
+}

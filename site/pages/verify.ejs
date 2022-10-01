@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/doc'); -%>
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+      async
+      defer
+    ></script>
+    <script type="text/javascript">
+      const urlParams = new URLSearchParams(window.location.search);
+      let err = urlParams.get("alert");
+
+      var onloadCallback = function () {
+        grecaptcha.render("captcha", {
+          sitekey: "6LeAj0UiAAAAABkFxmgAHOdtgwW8Q4ZX58gRXR2Y",
+        });
+      };
+
+      window.onload = function () {
+        setTimeout(() => {
+          if (err) alert(decodeURIComponent(err));
+        }, 300);
+      };
+    </script>
+    <link rel="stylesheet" href="/center.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <form id="form" method="POST">
+      <div
+        class="g-recaptcha"
+        id="captcha"
+        data-callback="correctCaptcha"
+      ></div>
+      <br />
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </body>
+</html>

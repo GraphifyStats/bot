@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/doc'); -%>
+    <link rel="stylesheet" href="/center.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <h1>An error occured.</h1>
+    <code id="error"></code>
+  </body>
+  <script>
+    let err = window.location.href.split("?")[1];
+    document.getElementById("error").textContent = decodeURIComponent(err);
+  </script>
+</html>
