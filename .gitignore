@@ -4,3 +4,4 @@ dist
 databases/**/*.sqlite*
 .env
 config.json
+site/settings.json

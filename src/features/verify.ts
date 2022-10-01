@@ -8,6 +8,7 @@ import {
   ButtonBuilder,
   ButtonStyle,
 } from "discord.js";
+import { DashboardConfig } from "../typings/Config";
 
 export default new Feature((client) => {
   // message sending and editing
@@ -48,6 +49,8 @@ export default new Feature((client) => {
 
   // button pressing
   client.on("interactionCreate", (int) => {
+    const settings: DashboardConfig = require("../site/settings.json");
+
     if (!int.isButton()) return;
     if (int.customId !== "verify") return;
 
@@ -66,13 +69,12 @@ export default new Feature((client) => {
       return;
     }
 
-    memberRoles.add(role);
-
     int.reply({
       embeds: [
         new EmbedBuilder()
-          .setTitle("✅ You are now verified!")
-          .setDescription(`Have fun chatting in ${int.guild.name}!`)
+          .setTitle(
+            `**To verify yourself, please go to this website:**\n${settings.domain}/verify`
+          )
           .setColor("DarkGreen"),
       ],
       ephemeral: true,

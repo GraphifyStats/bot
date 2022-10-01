@@ -11,3 +11,11 @@ export interface ClientConfig {
     [key: string]: string;
   };
 }
+
+export interface DashboardConfig {
+  clientId: string;
+  port: number;
+  domain: string;
+  callback: string;
+  banned: Array<string>;
+}
