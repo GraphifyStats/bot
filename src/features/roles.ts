@@ -30,7 +30,7 @@ export default new Feature((client) => {
           new EmbedBuilder()
             .setTitle("🔔 Ping Roles")
             .setDescription(
-              `<:uploadping:1017706882514833448> Upload Ping\n> Get pinged when JipStats or Graphify posts a new video.\n<:live:1023545225177747467> Livestream Ping\n> Get pinged whenever JipStats or Graphify starts a new livestream.\n📣 Announcement Ping\n> Get pinged whenever we annouce something.\n🗨️ Discussion Ping\n> Get pinged whenever a new discussion starts.\n😡 Chaos Ping\n>Get pinged whenever chaos is happening.`
+              `<:uploadping:1017706882514833448> Upload Ping\n> Get pinged when JipStats or Graphify posts a new video.\n<:live:1023545225177747467> Livestream Ping\n> Get pinged whenever JipStats or Graphify starts a new livestream.\n📣 Announcement Ping\n> Get pinged whenever we annouce something.\n🗨️ Discussion Ping\n> Get pinged whenever a new discussion starts.\n😡 Chaos Ping\n> Get pinged whenever chaos is happening.`
             )
             .setColor(client.config.color),
         ],
