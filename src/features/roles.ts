@@ -15,9 +15,11 @@ export default new Feature((client) => {
     upload: "1003518031365931008",
     livestream: "1023503398751969352",
     announcement: "1003658192762441738",
+    discussion: "1024314741855879218",
+    chaos: "1027112529517879317",
     jipstats: "1000689439087013989",
     graphify: "1023427951703900230",
-    gnz: "1024664925462867988",
+    ummerate: "1027875989587497020",
   };
 
   // message sending and editing
@@ -28,7 +30,7 @@ export default new Feature((client) => {
           new EmbedBuilder()
             .setTitle("🔔 Ping Roles")
             .setDescription(
-              `<:uploadping:1017706882514833448> Upload Ping\n> Get pinged when JipStats or Graphify posts a new video.\n<:live:1023545225177747467> Livestream Ping\n> Get pinged whenever JipStats or Graphify starts a new livestream.\n📣 Announcement Ping\n> Get pinged whenever we annouce something.`
+              `<:uploadping:1017706882514833448> Upload Ping\n> Get pinged when JipStats or Graphify posts a new video.\n<:live:1023545225177747467> Livestream Ping\n> Get pinged whenever JipStats or Graphify starts a new livestream.\n📣 Announcement Ping\n> Get pinged whenever we annouce something.\n🗨️ Discussion Ping\n> Get pinged whenever a new discussion starts.\n😡 Chaos Ping\n>Get pinged whenever chaos is happening.`
             )
             .setColor(client.config.color),
         ],
@@ -45,7 +47,15 @@ export default new Feature((client) => {
             new ButtonBuilder()
               .setCustomId("announcement")
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("📣")
+              .setEmoji("📣"),
+            new ButtonBuilder()
+              .setCustomId("discussion")
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("🗨️"),
+            new ButtonBuilder()
+              .setCustomId("chaos")
+              .setStyle(ButtonStyle.Secondary)
+              .setEmoji("😡")
           ),
         ],
       },
@@ -68,10 +78,10 @@ export default new Feature((client) => {
               .setEmoji("1024667806366699550")
               .setLabel("Graphify"),
             new ButtonBuilder()
-              .setCustomId("gnz")
+              .setCustomId("ummerate")
               .setStyle(ButtonStyle.Secondary)
-              .setEmoji("1024667809780875324")
-              .setLabel("GNZGUY")
+              .setEmoji("1027879017816281160")
+              .setLabel("Ummerate")
           ),
         ],
       },
